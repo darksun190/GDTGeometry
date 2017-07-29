@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace GDTGeometry.Feature
 {
-    class Point : IFeature
+    public class Point : IFeature
     {
         double x, y, z;
+
+        public Point(double x, double y, double z)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
 
         public double X { get => x; set => x = value; }
         public double Y { get => y; set => y = value; }
