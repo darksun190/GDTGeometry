@@ -8,5 +8,6 @@ namespace GDTGeometry
 {
     public interface IFeature
     {
+
     }
 }
