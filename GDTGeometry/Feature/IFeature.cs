@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GDTGeometry
+namespace GDTGeometry.Feature
 {
+    /// <summary>
+    /// interface of all features
+    /// </summary>
     public interface IFeature
     {
 

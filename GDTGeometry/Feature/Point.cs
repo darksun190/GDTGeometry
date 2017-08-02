@@ -8,7 +8,12 @@ using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace GDTGeometry.Feature
 {
-    public class Point : IFeature
+    /// <summary>
+    /// Point is a special Feature, it can be a individal feature
+    /// or can be part of other features
+    /// here is a base class for all kind of Points
+    /// </summary>
+    public class Point 
     {
         double x, y, z;
 
