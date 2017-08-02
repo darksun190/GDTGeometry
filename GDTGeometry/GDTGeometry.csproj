@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ICoordinate.cs" />
     <Compile Include="Feature\IFeature.cs" />
     <Compile Include="Feature\Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
