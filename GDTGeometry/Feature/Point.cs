@@ -40,5 +40,16 @@ namespace GDTGeometry.Feature
             J = j;
             K = k;
         }
+
+        public Point Coordinate(Core.ICoordinate Coord)
+        {
+            DenseVector v = DenseVector.OfArray(new double[] { X, Y, Z });
+            var r = v * Coord.Matrix;
+            return new Point(r[0], r[1], r[2]);
+        }
+        public override string ToString()
+        {
+            return string.Format("x:{0}\ty:{1}\tz:{2}\n", X, Y, Z);
+        }
     }
 }

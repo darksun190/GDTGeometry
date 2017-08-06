@@ -10,8 +10,8 @@ namespace GDTGeometry.Core
     /// <summary>
     /// 坐标系本质是一个4X4矩阵，点（Vector）与矩阵相乘得到坐标变换后的新点（Vector）
     /// </summary>
-    interface ICoordinate
+    public interface ICoordinate
     {
-        
+        DenseMatrix Matrix { get; }
     }
 }

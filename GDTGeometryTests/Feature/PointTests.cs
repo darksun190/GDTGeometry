@@ -11,7 +11,7 @@ namespace GDTGeometry.Feature.Tests
     [TestFixture()]
     public class PointTests
     {
-        //[Test()]
+        [Test()]
         [TestCase (1,2,3)]
         [TestCase(double.PositiveInfinity, 0, double.NegativeInfinity)]
         [TestCase(-10, 10, 0)]
