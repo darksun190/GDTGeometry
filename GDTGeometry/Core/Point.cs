@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MathNet.Numerics.LinearAlgebra.Double;
 
 
-namespace GDTGeometry.Feature
+namespace GDTGeometry.Core
 {
     /// <summary>
     /// Point is a special Feature, it can be a individal feature
