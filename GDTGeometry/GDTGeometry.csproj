@@ -49,28 +49,28 @@
     <Compile Include="Algorithm\Construction\Intersection.cs" />
     <Compile Include="Algorithm\Construction\Perpendicular.cs" />
     <Compile Include="Algorithm\Evaluations\Flatness.cs" />
-    <Compile Include="Algorithm\Extension\FormExtension.cs" />
-    <Compile Include="Algorithm\Extension\MaxDevExtension.cs" />
-    <Compile Include="Algorithm\Extension\MinDevExtension.cs" />
     <Compile Include="Algorithm\Evaluations\Roundness.cs" />
-    <Compile Include="Algorithm\Extension\SigmaExtension.cs" />
     <Compile Include="Collections\ListPointSet.cs" />
     <Compile Include="Collections\PointSet.cs" />
     <Compile Include="Core\ICoordinate.cs" />
+    <Compile Include="Feature\ActualPlane.cs" />
     <Compile Include="Feature\Cricle.cs" />
     <Compile Include="Feature\Cylinder.cs" />
+    <Compile Include="Feature\IActualFeature.cs" />
     <Compile Include="Feature\IFeature.cs" />
     <Compile Include="Feature\Line.cs" />
     <Compile Include="Feature\Plane.cs" />
     <Compile Include="Core\Point.cs" />
     <Compile Include="Feature\Sphere.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit.cs" />
+    <Compile Include="Core\Unit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Algorithm\Extension\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

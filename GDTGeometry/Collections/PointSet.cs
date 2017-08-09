@@ -10,7 +10,7 @@ namespace GDTGeometry.Collections
     /// 点集，用于保存一组测量点，或一组名义点集
     /// 集合中所有点是无序的
     /// </summary>
-    public class PointSet : HashSet<Core.Point>
+    public class PointSet : List<Core.Point>
     {
         
     }
