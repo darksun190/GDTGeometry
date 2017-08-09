@@ -61,6 +61,7 @@
     <Compile Include="Feature\IActualFeature.cs" />
     <Compile Include="Feature\IFeature.cs" />
     <Compile Include="Feature\Line.cs" />
+    <Compile Include="Feature\Line2D.cs" />
     <Compile Include="Feature\Plane.cs" />
     <Compile Include="Core\Point.cs" />
     <Compile Include="Feature\Sphere.cs" />

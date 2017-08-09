@@ -36,5 +36,16 @@ namespace GDTGeometry.Core
             return new Position(k * a.i, k * a.j, k * a.k);
         }
         public static Vector Zero => new Vector(0, 0, 0);
+        public static Vector UnitX => new Vector(1, 0, 0);
+        public static Vector UnitY => new Vector(0, 1, 0);
+        public static Vector UnitZ => new Vector(0, 0, 1);
+
+
+        public static double AngleBetweenTwoVector(Vector v1, Vector v2)
+        {
+            double valueUp = v1.Vec * v2.Vec;
+            double valueDown = v1.Vec.L2Norm() * v2.Vec.L2Norm();
+            return Math.Atan2(valueUp, valueDown);
+        }
     }
 }

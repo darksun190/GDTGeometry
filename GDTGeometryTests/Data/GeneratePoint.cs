@@ -34,14 +34,14 @@ namespace GDTGeometryTests.Data
         List<Point> LineNominalPoint(int PointNo, Line line)
         {
             List<Point> result = new List<Point>();
-            Vector v=line.PointDirection;
           
             double PN = PointNo;
             for(int i=0;i<PointNo;i++)
             {
                 result.Add(new Point(
-                     (line.Start+(i/PN)*line.Vec),))
+                     (line.Start + (i / PN) * line.Vec), line.PointDirection));
             }
+            return result;
         }
     }
 }

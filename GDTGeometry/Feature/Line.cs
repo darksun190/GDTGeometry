@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GDTGeometry.Core;
 
 namespace GDTGeometry.Feature
 {
@@ -11,45 +12,45 @@ namespace GDTGeometry.Feature
     /// </summary>
     public class Line : IFeature
     {
-        public Core.Position Start
+        public Position Start
         {
             get;
             private set;
         }
-        public Core.Position End
+        public Position End
         {
             get;
             private set;
         }
-        public Core.Vector PointDirection
+        public Vector PointDirection
         {
             get;
-            private set;
+            protected set;
         }
-        public Core.Vector Vec
+        public Vector Vec => new Vector(
+            End.X - Start.X, End.Y - Start.Y, End.Z - Start.Z);
+
+        public Line(Point P1, Point P2)
         {
-            get;
-            private set;
+            Start = new Position(P1.X, P1.Y, P1.Z);
+            End = new Position(P2.X, P2.Y, P2.Z);
         }
-        public Line(Core.Point P1, Core.Point P2)
+        public Line(Position P1, Position P2)
+        : this(new Point(P1, Vector.Zero), new Point(P2, Vector.Zero))
         {
-            PointDirection = P1.Vec;
-            
+
         }
-        public Line(Core.Position P1, Core.Position P2)
-            : this(new Core.Point(P1,Core.Vector.Zero),
-                  new Core.Point(P2,Core.Vector.Zero)
-                  )
+        public Line(Point P1, Vector V1, double len)
+            : this(P1.Pos, P1.Pos + len * V1)
         {
-            double delta_x = P2.X - P1.X;
-            double delta_y = P2.Y - P1.Y;
-            double delta_z = P2.Z - P1.Z;
-            Start = new Core.Position(P1.X, P1.Y, P1.Z);
-            End = new Core.Position(P2.X, P2.Y, P2.Z);
-            Vec = new Core.Vector(delta_x, delta_y, delta_z);
-            PointDirection = new Core.Vector(0, 0, 0);
+
         }
-     
+        public Line(Position P1, Vector V1, double len)
+            : this(P1, P1 + len * V1)
+        {
+
+        }
+
 
     }
 }
