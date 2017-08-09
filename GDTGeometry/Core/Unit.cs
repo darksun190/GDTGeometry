@@ -4,20 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GDTGeometry
+namespace GDTGeometry.Core
 {
     class Unit
     {
-        enum COORD
+        internal enum COORD
         {
             CART,
             POL,
             SPHERE
         }
-        enum Length
+        internal enum Length
         {
             mm,
             inch
+        }
+        internal enum EvaluationMethod
+        {
+            Gauss,
+            Tschebyscheff,
         }
     }
 }

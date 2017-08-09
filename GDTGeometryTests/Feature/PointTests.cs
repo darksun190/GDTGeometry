@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using GDTGeometry.Feature;
+using GDTGeometry.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
