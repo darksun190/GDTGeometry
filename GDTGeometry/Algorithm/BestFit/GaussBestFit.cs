@@ -8,5 +8,9 @@ namespace GDTGeometry.Algorithm.BestFit
 {
     class GaussBestFit
     {
+        Feature.ActualPlane GaussFitPlane(Collections.PointSet PS)
+        {
+
+        }
     }
 }

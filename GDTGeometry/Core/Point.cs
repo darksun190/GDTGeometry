@@ -13,32 +13,41 @@ namespace GDTGeometry.Core
     /// or can be part of other features
     /// here is a base class for all kind of Points
     /// </summary>
-    public class Point 
+    public class Point
     {
-        double x, y, z;
+        public Position Pos
+        {
+            get;
+            set;
+        }
+        public Vector Vec
+        {
+            get;
+            set;
+        }
 
         public Point(double x, double y, double z)
             : this(x, y, z, 0, 0, 0)
         {
 
         }
-        public double X { get => x; set => x = value; }
-        public double Y { get => y; set => y = value; }
-        public double Z { get => z; set => z = value; }
-        public double I { get => i; set => i = value; }
-        public double J { get => j; set => j = value; }
-        public double K { get => k; set => k = value; }
+        public double X { get => Pos.X; }
+        public double Y { get => Pos.Y; }
+        public double Z { get => Pos.Z; }
+        public double I { get => Vec.I; }
+        public double J { get => Vec.J; }
+        public double K { get => Vec.K; }
 
-        double i, j, k;
 
         public Point(double x, double y, double z, double i, double j, double k)
+            : this(new Position(x, y, z), new Vector(i, j, k))
         {
-            X = x;
-            Y = y;
-            Z = z;
-            I = i;
-            J = j;
-            K = k;
+
+        }
+        public Point(Position P, Vector V)
+        {
+            Pos = new Position(P.X, P.Y, P.Z);
+            Vec = new Vector(V.I, V.J, V.K);
         }
     }
 }

@@ -53,6 +53,8 @@
     <Compile Include="Collections\ListPointSet.cs" />
     <Compile Include="Collections\PointSet.cs" />
     <Compile Include="Core\ICoordinate.cs" />
+    <Compile Include="Core\Position.cs" />
+    <Compile Include="Core\Vector.cs" />
     <Compile Include="Feature\ActualPlane.cs" />
     <Compile Include="Feature\Cricle.cs" />
     <Compile Include="Feature\Cylinder.cs" />
