@@ -13,6 +13,6 @@ namespace GDTGeometry.Core
     /// </summary>
     public interface ICoordinate
     {
-        DenseMatrix Matrix { get; }
+        
     }
 }

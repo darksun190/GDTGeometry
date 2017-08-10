@@ -9,7 +9,7 @@ namespace GDTGeometry.Core
 {
     public class Position
     {
-        public Position(double x,double y, double z)
+        public Position(double x, double y, double z)
         {
             X = x;
             Y = y;
@@ -17,12 +17,11 @@ namespace GDTGeometry.Core
         }
 
         public Position(Position position)
+            : this(position.X, position.Y, position.Z)
         {
-            this.position = position;
         }
 
         double x, y, z;
-        private Position position;
 
         public double X { get => x; set => x = value; }
         public double Y { get => y; set => y = value; }
@@ -35,7 +34,14 @@ namespace GDTGeometry.Core
                 return DenseVector.OfArray(new double[] { X, Y, Z });
             }
         }
-        public static Position operator+(Position a, Position b)
+        public DenseVector Pos4
+        {
+            get
+            {
+                return DenseVector.OfArray(new double[] { X, Y, Z, 1 });
+            }
+        }
+        public static Position operator +(Position a, Position b)
         {
             return new Position(
                 a.X + b.X, a.Y + b.Y, a.Z + b.Z);

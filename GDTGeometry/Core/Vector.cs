@@ -31,6 +31,13 @@ namespace GDTGeometry.Core
                 return DenseVector.OfArray(new double[] { I, J, K });
             }
         }
+        public DenseVector Vec4
+        {
+            get
+            {
+                return DenseVector.OfArray(new double[] { I, J, K, 0 });
+            }
+        }
         public static Position operator *(double k, Vector a)
         {
             return new Position(k * a.i, k * a.j, k * a.k);
