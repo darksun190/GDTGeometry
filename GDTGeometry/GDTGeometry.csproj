@@ -52,6 +52,7 @@
     <Compile Include="Algorithm\Evaluations\Roundness.cs" />
     <Compile Include="Collections\ListPointSet.cs" />
     <Compile Include="Collections\PointSet.cs" />
+    <Compile Include="Core\CartesianCoordinate.cs" />
     <Compile Include="Core\ICoordinate.cs" />
     <Compile Include="Core\Position.cs" />
     <Compile Include="Core\Vector.cs" />

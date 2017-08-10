@@ -24,5 +24,11 @@ namespace GDTGeometry.Core
             Gauss,
             Tschebyscheff,
         }
+        internal enum Axis
+        {
+            X,
+            Y,
+            Z
+        }
     }
 }

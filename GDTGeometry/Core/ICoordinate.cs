@@ -8,7 +8,8 @@ using MathNet.Numerics.LinearAlgebra.Double;
 namespace GDTGeometry.Core
 {
     /// <summary>
-    /// 坐标系本质是一个4X4矩阵，点（Vector）与矩阵相乘得到坐标变换后的新点（Vector）
+    /// 坐标系是一种变换，线性变换可以用4*4矩阵表示
+    /// 非线性变换（笛卡尔坐标系到圆柱坐标系）则需要其他运算，这里只考虑线性变换
     /// </summary>
     public interface ICoordinate
     {
