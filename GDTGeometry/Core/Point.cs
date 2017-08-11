@@ -49,9 +49,11 @@ namespace GDTGeometry.Core
             Pos = new Position(P.X, P.Y, P.Z);
             Vec = new Vector(V.I, V.J, V.K);
         }
-        public Point NewCoordinate(Core.ICoordinate Coord)
+        public Point NewCoordinate(CartesianCoordinate Coord)
         {
-            throw new NotImplementedException();
+            var pos_new = Coord * Pos;
+            var vec_new = Coord * Vec;
+            return new Point(pos_new, vec_new);
         }
         public override string ToString()
         {

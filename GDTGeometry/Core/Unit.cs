@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GDTGeometry.Core
 {
-    class Unit
+    public class Unit
     {
         internal enum COORD
         {
@@ -24,7 +24,7 @@ namespace GDTGeometry.Core
             Gauss,
             Tschebyscheff,
         }
-        internal enum Axis
+        public enum Axis
         {
             X,
             Y,

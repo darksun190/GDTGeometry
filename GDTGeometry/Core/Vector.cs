@@ -42,6 +42,11 @@ namespace GDTGeometry.Core
         {
             return new Position(k * a.i, k * a.j, k * a.k);
         }
+        public static Vector operator *(CartesianCoordinate M, Vector v)
+        {
+            var result = M.Matrix * v.Vec4;
+            return new Vector(result[0], result[1], result[2]);
+        }
         public static Vector Zero => new Vector(0, 0, 0);
         public static Vector UnitX => new Vector(1, 0, 0);
         public static Vector UnitY => new Vector(0, 1, 0);

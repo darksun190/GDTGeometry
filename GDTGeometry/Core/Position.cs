@@ -46,5 +46,22 @@ namespace GDTGeometry.Core
             return new Position(
                 a.X + b.X, a.Y + b.Y, a.Z + b.Z);
         }
+        public static Position operator *(double k, Position a)
+        {
+            return new Position(k * a.X, k * a.Y, k * a.Z);
+        }
+        public static Position operator *(Position a, double k)
+        {
+            return k * a;
+        }
+        public static Position operator *(CartesianCoordinate M, Position p)
+        {
+            var result = M.Matrix * p.Pos4;
+            return new Position(result[0], result[1], result[2]);
+        }
+
+        public static Position Zero => new Position(0, 0, 0);
+        public static Position One => new Position(1, 1, 1);
+
     }
 }
