@@ -22,10 +22,26 @@ namespace GDTGeometry.Feature
             get;
             private set;
         }
+        public double Length
+        {
+            get
+            {
+                return (End - Start).Pos.L2Norm();
+            }
+        }
+        private Vector pointdirection;
         public Vector PointDirection
         {
-            get;
-            protected set;
+            get
+            {
+                if (pointdirection == null)
+                    pointdirection = Vector.Zero;
+                return pointdirection;
+            }
+            protected set
+            {
+                pointdirection = value;
+            }
         }
         public Vector Vec => new Vector(
             End.X - Start.X, End.Y - Start.Y, End.Z - Start.Z);

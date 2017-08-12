@@ -59,5 +59,10 @@ namespace GDTGeometry.Core
             double valueDown = v1.Vec.L2Norm() * v2.Vec.L2Norm();
             return Math.Atan2(valueUp, valueDown);
         }
+
+        public override string ToString()
+        {
+            return string.Format("Vector [{0:F4}, {1:F4}, {2:F4}]\n", I, J, K);
+        }
     }
 }

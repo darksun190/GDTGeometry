@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GDTGeometry.Collections;
+using GDTGeometry.Core;
+using GDTGeometry.Feature;
 
 namespace GDTGeometryTests.Data
 {
@@ -23,6 +25,14 @@ namespace GDTGeometryTests.Data
             ps.Add(new GDTGeometry.Core.Point(-1, 1, 0));
             ps.Add(new GDTGeometry.Core.Point(-1, -1, 0));
             return ps;
+        }
+        public static PointSet LinePoint_Nominal(int PointNo, Line2D line)
+        {
+            return new PointSet(GeneratePoint.Line2DNominalPoint(PointNo, line));
+        }
+        public static PointSet LinePoint_RandomAndSin()
+        {
+            throw new NotImplementedException();
         }
     }
 }

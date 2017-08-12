@@ -57,7 +57,7 @@ namespace GDTGeometry.Core
         }
         public override string ToString()
         {
-            return string.Format("x:{0}\ty:{1}\tz:{2}\n", X, Y, Z);
+            return string.Format("{0},{1}",Pos,Vec);
         }
         
     }

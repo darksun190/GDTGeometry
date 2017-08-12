@@ -8,18 +8,18 @@ namespace GDTGeometry.Core
 {
     public class Unit
     {
-        internal enum COORD
+        public enum COORD
         {
             CART,
             POL,
             SPHERE
         }
-        internal enum Length
+        public enum Length
         {
             mm,
             inch
         }
-        internal enum EvaluationMethod
+        public enum EvaluationMethod
         {
             Gauss,
             Tschebyscheff,

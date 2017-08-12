@@ -11,7 +11,7 @@ namespace GDTGeometry.Feature
     /// Line2D is a line with a point direction 
     /// which means all points in this line has a fixed vector
     /// </summary>
-    class Line2D: Line
+    public class Line2D: Line
     {
         public Line2D(Point P1, Point P2)
             :base(P1,P2)

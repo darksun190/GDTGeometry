@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithm\BestFit\BestFit.cs" />
     <Compile Include="Algorithm\BestFit\GaussBestFit.cs" />
     <Compile Include="Algorithm\Construction\Distance.cs" />
     <Compile Include="Algorithm\Construction\Intersection.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Core\ICoordinate.cs" />
     <Compile Include="Core\Position.cs" />
     <Compile Include="Core\Vector.cs" />
+    <Compile Include="Feature\ActualLine.cs" />
     <Compile Include="Feature\ActualPlane.cs" />
     <Compile Include="Feature\Cricle.cs" />
     <Compile Include="Feature\Cylinder.cs" />
