@@ -24,7 +24,13 @@ namespace GDTGeometry.Core
                 return DenseMatrix.OfColumnVectors(new DenseVector[] { AxisX.Vec4, AxisY.Vec4, AxisZ.Vec4, Pos.Pos4 });
             }
         }
-
+        /// <summary>
+        /// create a new coordinates basy on 3 axis & 1 zero position
+        /// </summary>
+        /// <param name="x">vector of xaxis</param>
+        /// <param name="y">vector of yaxis</param>
+        /// <param name="z">vector of zaxis</param>
+        /// <param name="p">zero point postion</param>
         public CartesianCoordinate(Vector x,Vector y,Vector z, Position p)
         {
             AxisX = x;

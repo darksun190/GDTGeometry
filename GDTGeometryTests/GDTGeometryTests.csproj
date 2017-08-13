@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Algorithm\BestFit\BestFitTests.cs" />
+    <Compile Include="Core\VectorTests.cs" />
     <Compile Include="Data\GeneratePoint.cs" />
     <Compile Include="Data\TestData.cs" />
     <Compile Include="Feature\PointTests.cs" />
