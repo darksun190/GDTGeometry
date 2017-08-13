@@ -64,5 +64,15 @@ namespace GDTGeometry.Core
         {
             return string.Format("Vector [{0:F4}, {1:F4}, {2:F4}]\n", I, J, K);
         }
+
+        public Vector CrossMultiply(Vector b)
+        {
+            return new Vector(
+                this.J * b.K - this.K * b.J,
+                -(this.I * b.K - this.K * b.I),
+                this.I * b.J - this.J * b.I
+                );
+        }
+        
     }
 }
