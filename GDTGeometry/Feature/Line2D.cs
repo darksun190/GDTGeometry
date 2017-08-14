@@ -50,5 +50,16 @@ namespace GDTGeometry.Feature
             }
             PointDirection = v;
         }
+        CartesianCoordinate FeatureAlignment
+        {
+            get
+            {
+                Vector x = this.Vec;
+                Vector z = this.PointDirection;
+                Vector y = z.CrossMultiply(x);
+                Position p = Start;
+                return new CartesianCoordinate(x, y, z, p);
+            }
+        }
     }
 }
