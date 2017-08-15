@@ -35,7 +35,22 @@ namespace GDTGeometry.Feature
                 Calculate();
             }
         }
+        ListPointSet Sort()
+        {
+            var y = actual.Vec;
+            var z = actual.PointDirection;
+            var x = y.CrossMultiply(z);
+            var p = actual.Start;
 
+            var feature_alignment = new CartesianCoordinate(x, y, z, p);
+
+            ListPointSet LPS = new ListPointSet();
+            foreach(var point in Points)
+            {
+                LPS.Add(point.NewCoordinate(feature_alignment));
+            }
+            return LPS;
+        }
         private void Calculate()
         {
             actual = Algorithm.BestFit.BestFit.BestFitLine(Points, EvaluationMethod);
