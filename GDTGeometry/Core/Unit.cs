@@ -23,6 +23,7 @@ namespace GDTGeometry.Core
         {
             Gauss,
             Tschebyscheff,
+            
         }
         public enum Axis
         {

@@ -17,7 +17,15 @@ namespace GDTGeometry.Feature
             private set;
         }
         private Unit.EvaluationMethod evaluationmethod;
-        Line actual;
+        Line Actual
+        {
+            get
+            {
+                if (Points == null )
+                    throw new NullReferenceException("no Points defined.");
+                return Algorithm.BestFit.BestFit.BestFitLine(Points, EvaluationMethod);
+            }
+        }
         public ActualLine(PointSet PS, Unit.EvaluationMethod method = Unit.EvaluationMethod.Gauss)
         {
             Points = PS;
@@ -32,15 +40,14 @@ namespace GDTGeometry.Feature
             set
             {
                 evaluationmethod = value;
-                Calculate();
             }
         }
         ListPointSet Sort()
         {
-            var y = actual.Vec;
-            var z = actual.PointDirection;
+            var y = Actual.Vec;
+            var z = Actual.PointDirection;
             var x = y.CrossMultiply(z);
-            var p = actual.Start;
+            var p = Actual.Start;
 
             var feature_alignment = new CartesianCoordinate(x, y, z, p);
 
@@ -51,11 +58,7 @@ namespace GDTGeometry.Feature
             }
             return LPS;
         }
-        private void Calculate()
-        {
-            actual = Algorithm.BestFit.BestFit.BestFitLine(Points, EvaluationMethod);
-            throw new NotImplementedException();
-        }
+       
 
         public double Form => throw new NotImplementedException();
 
