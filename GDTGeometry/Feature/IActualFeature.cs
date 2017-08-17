@@ -32,5 +32,6 @@ namespace GDTGeometry.Feature
         {
             get;
         }
+        void Calculate(object sender, EventArgs e);
     }
 }
