@@ -34,9 +34,9 @@ namespace GDTGeometry.Core
         public double X { get => Pos.X; }
         public double Y { get => Pos.Y; }
         public double Z { get => Pos.Z; }
-        public double I { get => Vec.I; }
-        public double J { get => Vec.J; }
-        public double K { get => Vec.K; }
+        public double I { get => Vec.A; }
+        public double J { get => Vec.B; }
+        public double K { get => Vec.C; }
 
 
         public Point(double x, double y, double z, double i, double j, double k)
@@ -47,7 +47,7 @@ namespace GDTGeometry.Core
         public Point(Position P, Vector V)
         {
             Pos = new Position(P.X, P.Y, P.Z);
-            Vec = new Vector(V.I, V.J, V.K);
+            Vec = new Vector(V.A, V.B, V.C);
         }
         public Point NewCoordinate(CartesianCoordinate Coord)
         {

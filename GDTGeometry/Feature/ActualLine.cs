@@ -13,18 +13,28 @@ namespace GDTGeometry.Feature
     {
         delegate void ParasChangedEventHandler(object sender, EventArgs e);
         event ParasChangedEventHandler ParasChangedEvent;
-
+        /// <summary>
+        /// 实际点集
+        /// </summary>
         public PointSet Points
         {
             get;
             private set;
         }
         private Unit.EvaluationMethod evaluationmethod;
+        /// <summary>
+        /// 拟合后的直线结果
+        /// </summary>
         Line Actual
         {
             get;
             set;
         }
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="PS">点集</param>
+        /// <param name="method">拟合方法</param>
         public ActualLine(PointSet PS, Unit.EvaluationMethod method = Unit.EvaluationMethod.Gauss)
         {
             ParasChangedEvent += Calculate;
@@ -32,7 +42,9 @@ namespace GDTGeometry.Feature
             EvaluationMethod = method;
         }
 
-
+        /// <summary>
+        /// 拟合用的拟合方法
+        /// </summary>
         public Unit.EvaluationMethod EvaluationMethod
         {
             get
@@ -48,6 +60,10 @@ namespace GDTGeometry.Feature
                 }
             }
         }
+        /// <summary>
+        /// 将所有点重新排序
+        /// </summary>
+        /// <returns></returns>
         ListPointSet Sort()
         {
             var y = Actual.Vec;
@@ -64,7 +80,12 @@ namespace GDTGeometry.Feature
             }
             return LPS;
         }
-
+        /// <summary>
+        /// method for event para changed.
+        /// re calcuate the actual result
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Calculate(object sender, EventArgs e)
         {
             Actual = GDTGeometry.Algorithm.BestFit.BestFit.BestFitLine(Points, evaluationmethod);

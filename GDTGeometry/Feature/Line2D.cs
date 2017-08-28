@@ -20,9 +20,9 @@ namespace GDTGeometry.Feature
             if(v == Vector.Zero)
             {
                 double x, y, z;
-                x = Math.Abs(Vec.I);
-                y = Math.Abs(Vec.J);
-                z = Math.Abs(Vec.K);
+                x = Math.Abs(Vec.A);
+                y = Math.Abs(Vec.B);
+                z = Math.Abs(Vec.C);
                 if(x>y&&x>z)
                 {
                     v = new Vector(

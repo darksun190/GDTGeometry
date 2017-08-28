@@ -8,39 +8,39 @@ using MathNet.Numerics.LinearAlgebra.Double;
 namespace GDTGeometry.Core
 {
     /// <summary>
-    /// a 3-dimension densevector which lense is 1
+    /// a 3-dimension densevector 
     /// </summary>
     public class Vector
     {
         public Vector(double i, double j, double k)
         {
-            double len = Math.Sqrt(i * i + j * j + k * k);
-            I = i / len;
-            J = j / len;
-            K = k / len;
-        }
-        double i, j, k;
 
-        public double I { get => i; set => i = value; }
-        public double J { get => j; set => j = value; }
-        public double K { get => k; set => k = value; }
+            A = i;
+            B = j;
+            C = k;
+        }
+        double a, b, c;
+
+        public double A { get => a; set => a = value; }
+        public double B { get => b; set => b = value; }
+        public double C { get => c; set => c = value; }
         public DenseVector Vec
         {
             get
             {
-                return DenseVector.OfArray(new double[] { I, J, K });
+                return DenseVector.OfArray(new double[] { A, B, C });
             }
         }
         public DenseVector Vec4
         {
             get
             {
-                return DenseVector.OfArray(new double[] { I, J, K, 0 });
+                return DenseVector.OfArray(new double[] { A, B, C, 0 });
             }
         }
         public static Position operator *(double k, Vector a)
         {
-            return new Position(k * a.i, k * a.j, k * a.k);
+            return new Position(k * a.a, k * a.b, k * a.c);
         }
         public static Vector operator *(CartesianCoordinate M, Vector v)
         {
@@ -62,18 +62,18 @@ namespace GDTGeometry.Core
 
         public override string ToString()
         {
-            return string.Format("Vector [{0:F4}, {1:F4}, {2:F4}]\n", I, J, K);
+            return string.Format("Vector [{0:F4}, {1:F4}, {2:F4}]\n", A, B, C);
         }
 
         public Vector CrossMultiply(Vector b)
         {
             var result = new Vector(
-                this.J * b.K - this.K * b.J,
-                -(this.I * b.K - this.K * b.I),
-                this.I * b.J - this.J * b.I
+                this.B * b.C - this.C * b.B,
+                -(this.A * b.C - this.C * b.A),
+                this.A * b.B - this.B * b.A
                 );
             return result;
         }
-        
+
     }
 }
